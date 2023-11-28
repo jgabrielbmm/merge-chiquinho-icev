@@ -54,6 +54,11 @@ export function mergeSort(arr: number[], initial: number, final: number){
   }
 }
 
+export function minAndMax(arr: number[], initial: number, final: number){
+  mergeSort(arr, initial, final)
+  return [arr[0], arr[arr.length -1]]
+}
+
 // Time Complexity O(n*log(n)) => T(n) = 2T(n/2) + n => making n = 2ˆk 
 // Use Master theorem to type T(n) = a*T(n/b) + nˆc recurrence
 
@@ -64,6 +69,6 @@ let arr4 = [4,2,1,8,7,5,5,6]
 let arr5 = [133, 425, 244, 385, 236, 236, 328, 1000, 299, 325]
 let arr6 = [425, 244, 385, 236, 236, 328, 1000, 299, 325]
 
-mergeSort(arr4, 0, arr4.length - 1)
-console.log(arr4)
-
+// mergeSort(arr4, 0, arr4.length - 1)
+// console.log(arr4)
+console.log(minAndMax(arr4, 0, arr4.length - 1))
